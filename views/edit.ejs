@@ -1,0 +1,56 @@
+<%- include('header') %>
+
+<div class="ui grid">
+  <div class="four wide column">
+    <!--<a class="avatar"
+       href="/posts?author=<%= user._id %>"
+       data-title="<%= user.name %> | <%= ({m: '男', f: '女', x: '保密'})[user.gender] %>"
+       data-content="<%= user.bio %>">
+      <img class="avatar" src="/img/<%= user.avatar %>">
+    </a>-->
+  </div>
+
+  <div class="eight wide column">
+    <form class="ui form segment" method="post" action="/posts/<%= post._id %>/edit">
+      <div class="field required">
+        <label>电影标题</label>
+        <input type="text" name="title" value="<%= post.title %>">
+      </div>
+      <div class="field required">
+        <label>经典台词</label>
+        <textarea name="content" rows="5"><%= post.content %></textarea>
+      </div>
+      <div class="field required">
+        <label>English</label>
+        <textarea name="english" rows="5"><%= post.english %></textarea>
+      </div>
+      <div class="field required">
+        <label>图片地址</label>
+        <input type="text" placeholder="http://" name="pic" value="<%= post.pic %>">
+      </div>
+      <div class="field required">
+        <label>英文月份</label>
+        <input type="text" placeholder="JAN" name="month" value="<%= post.month %>">
+      </div>
+      <div class="field required">
+        <label>星期</label>
+        <input type="text" placeholder="星期一" name="weekday" value="<%= post.weekday %>">
+      </div>
+      <div class="field required">
+        <label>Number</label>
+        <input type="text" placeholder="01" name="day" value="<%= post.day %>">
+      </div>
+      <div class="field required">
+        <label>日期</label>
+        <input type="text" placeholder="2018-01-01" name="fullDay" value="<%= post.fullDay %>">
+      </div>
+      <div class="field required">
+        <label>农历日期</label>
+        <input type="text" name="chineseDay" value="<%= post.chineseDay %>">
+      </div>
+      <input type="submit" class="ui button" value="发布">
+    </form>
+  </div>
+</div>
+
+<%- include('footer') %>
